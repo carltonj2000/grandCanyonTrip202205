@@ -1,0 +1,13 @@
+{
+  "name": "grandcanyontrip202205",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=/grandcanyontrip202205/",
+    "preview": "vite preview --base=/grandcanyontrip202205/"
+  },
+  "devDependencies": {
+    "vite": "^2.9.7"
+  }
+}
