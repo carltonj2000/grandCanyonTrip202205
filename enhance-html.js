@@ -16,6 +16,7 @@
  *         t=the tipoff
  *         u=plateau point
  *         v=gc visitors
+ *         w=williams
  *         y=gc village
  */
 
@@ -50,6 +51,7 @@ const links = {
   iwm: "https://themcmillan.us/",
   iwo: "https://www.patothai.com/",
   iwa: "https://martannes.com/",
+  ilw: "https://goo.gl/maps/Bov8ZrUxddbEgepH6",
 };
 
 //

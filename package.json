@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/grandcanyontrip202205/",
-    "preview": "vite preview --base=/grandcanyontrip202205/"
+    "build": "vite build --base=/grand-canyon-2022-may-staging/",
+    "preview": "vite preview --base=/grand-canyon-2022-may-staging/",
+    "rsync": "rsync -avz ./dist/ carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/grand-canyon-2022-may-staging/",
+    "build:prod": "vite build --base=/grand-canyon-2022-may/",
+    "preview:prod": "vite preview --base=/grand-canyon-2022-may/",
+    "rsync:prod": "rsync -avz ./dist/ carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/grand-canyon-2022-may/"
   },
   "devDependencies": {
     "vite": "^2.9.7"

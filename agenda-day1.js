@@ -5,7 +5,7 @@ const agenda = [
   [
     "9:00 AM",
     "1:30 PM",
-    "Drive from <ilr />Vegas to <ill />Lava River Cave <iml /> with one stop.",
+    "Drive from <ilr />Vegas to <ill />Lava River Cave <iml /> with one stop.<ilw />",
   ],
   [
     "1:30 PM",
