@@ -1,5 +1,5 @@
-export const CACHE_NAME = "v17";
-export const urlsToCache = [
+const CACHE_NAME = "v17";
+const urlsToCache = [
   "index.html",
   "offline.html",
   "assets/index.js",
@@ -8,8 +8,8 @@ export const urlsToCache = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+    caches.open(CACHE_NAME).then((c) => {
+      return c.addAll(urlsToCache);
     })
   );
 });
