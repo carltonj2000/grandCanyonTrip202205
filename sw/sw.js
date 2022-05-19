@@ -1,15 +1,17 @@
-const CACHE_NAME = "v17";
+import { CACHE_NAME } from "./sw-cache-name";
+
 const urlsToCache = [
   "index.html",
+  "gc-32.png",
   "offline.html",
   "assets/index.js",
   "assets/index.css",
-];
+].map((a) => "/grand-canyon-2022-may/" + a);
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((c) => {
-      return c.addAll(urlsToCache);
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
     })
   );
 });
@@ -27,9 +29,8 @@ self.addEventListener("fetch", (event) => {
             });
           })
           .catch((e) => {
-            // console.log("fetch error", e); // uncomment for debug
             return caches.open(CACHE_NAME).then((cache) => {
-              return cache.match("offline.html");
+              return cache.match("index.html");
             });
           })
       );

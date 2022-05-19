@@ -6,12 +6,11 @@ window.addEventListener("load", function () {
         /*
         reg.periodicSync
           .register("get-app-update", { minInterval: 1 * 60 * 60 * 1000 })
-          .catch((e) => console.log("SW periodic sync failed!", e));
+          .catch((e) => console.error("SW periodic sync failed!", e));
           */
         listenForWaitingServiceWorker(reg, promptUserToRefresh);
       },
-      // remove true in the line below for debug
-      (err) => true || console.log("ServiceWorker reg fail: ", err)
+      (err) => console.error("ServiceWorker reg fail: ", err)
     );
   }
 });

@@ -6,12 +6,18 @@
     "dev": "vite",
     "build": "vite build --base=/grand-canyon-2022-may-staging/",
     "preview": "vite preview --base=/grand-canyon-2022-may-staging/",
+    "build:dev:w": "vite build --watch",
+    "preview:dev": "vite preview",
     "rsync": "rsync -avz ./dist/ carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/grand-canyon-2022-may-staging/",
     "build:prod": "vite build --base=/grand-canyon-2022-may/",
-    "preview:prod": "vite preview --base=/grand-canyon-2022-may/",
+    "build:prod:w": "vite build --watch --base=/grand-canyon-2022-may/",
+    "preview:prod": "vite preview -l info --base=/grand-canyon-2022-may/",
+    "build:sw": "esbuild ./sw/sw.js --bundle --outfile=./dist/sw.js",
+    "update:swcn": "nodemon --watch sw/sw.js --exec node sw/update-sw-cn.js",
     "rsync:prod": "rsync -avz ./dist/ carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/grand-canyon-2022-may/"
   },
   "devDependencies": {
+    "nodemon": "^2.0.16",
     "vite": "^2.9.7"
   }
 }

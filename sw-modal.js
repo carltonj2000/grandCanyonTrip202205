@@ -33,7 +33,7 @@ class SwModal extends HTMLElement {
       }
     </style>`;
     const html = /* html */ `
-      <div style="display:flex" id="pwa-upgrade-modal">
+      <div style="display:none" id="pwa-upgrade-modal">
         <button id="later">Update Later</button>
         <p>Update Available</p>
         <button id="now">Update Now</button>
@@ -47,6 +47,7 @@ customElements.define("sw-modal", SwModal);
 const pwaUpgradeModal = document.getElementById("pwa-upgrade-modal");
 const later = document.getElementById("later");
 const now = document.getElementById("now");
+let reg = null;
 
 later.addEventListener("click", () => {
   pwaUpgradeModal.style.display = "none";
@@ -54,4 +55,10 @@ later.addEventListener("click", () => {
 
 now.addEventListener("click", () => {
   pwaUpgradeModal.style.display = "none";
+  if (reg && reg.waiting) reg.waiting.postMessage("skipWaiting");
+});
+
+document.addEventListener("serviceWorkerUpdateEvent", (e) => {
+  pwaUpgradeModal.style.display = "flex";
+  reg = e.detail;
 });
